@@ -9,6 +9,7 @@ provider:
 
 functions:
   graphql:
+    reservedConcurrency: 1 # ensure a singleton manipulating data at one time
     handler: hostAws.handler          
     events:
       - http:
