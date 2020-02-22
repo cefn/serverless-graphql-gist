@@ -12,6 +12,6 @@ functions:
     handler: hostAws.handler          
     events:
       - http:
-          path: /{any+}
+          path: /graphql
           method: ANY
           cors: true

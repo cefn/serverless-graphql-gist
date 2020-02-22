@@ -10,10 +10,10 @@ function createServer() {
     graphiql: true
   })
 
-  const app = express()
-  app.use("/graphql", graphqlEndpoint)
-  app.use(express.static("static"))
-  return app
+  const server = express()
+  server.use("/graphql", graphqlEndpoint)
+  server.use(express.static("static"))
+  return server
 }
 
 module.exports = {
