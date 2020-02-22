@@ -1,11 +1,11 @@
 const awsServerlessExpress = require("aws-serverless-express")
 const {createServer} = require("./graphqlServer")
 
-const server = createServer()
+const expressServer = createServer()
 
-const awsServer = awsServerlessExpress.createServer(server)
+const awsServerless = awsServerlessExpress.createServer(expressServer)
 
-const handler = (event, context) => { awsServerlessExpress.proxy(awsServer, event, context) }
+const handler = (event, context) => { awsServerlessExpress.proxy(awsServerless, event, context) }
 
 module.exports = {
   handler
