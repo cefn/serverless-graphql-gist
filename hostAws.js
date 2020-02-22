@@ -1,12 +1,8 @@
 const serverless = require("serverless-http")
-const {createApiServer} = require("./api")
+const {createServer} = require("./graphqlServer")
 
-const server = createApiServer()
-const serverlessHandler = serverless(server)
-
-async function handler(event, context, callback){
-  return await serverlessHandler(event, context)
-}
+const server = createServer()
+const handler = serverless(server)
 
 module.exports = {
   handler
