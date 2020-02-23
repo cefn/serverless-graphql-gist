@@ -1,14 +1,21 @@
 # serverless-graphql-gist
 
-A minimal graphql server, hosted through express-graphql to prove express on lambda.
+A minimal graphql server, hosted through express-graphql to prove express on lambda. [Serverless credentials setup](https://serverless.com/framework/docs/providers/aws/guide/credentials/) is needed for Lambda deployments to succeed.
 
 Configurations are present for...
 * Hosting through express locally to prove the graphql server `node hostExpress.js`
-* Hosting through [aws-serverless-express](https://github.com/awslabs/aws-serverless-express) on AWS Lambda
-* Hosting through [serverless-http](https://github.com/dougmoscrop/serverless-http) on AWS Lambda
+* Hosting through [aws-serverless-express](https://github.com/awslabs/aws-serverless-express) on AWS Lambda, (which is currently functional) `npx serverless deploy`
+* Hosting through [serverless-http](https://github.com/dougmoscrop/serverless-http) on AWS Lambda, (which is currently buggy). Edit the line described below, then `npx serverless deploy`
 
-To host on lambda with aws-serverless-express set up serverless credentials then `npx serverless deploy`
-To host on lambda with serverless-http edit serverless.yml and replace the handler line with
+A different handler is defined for serverless-http.
+Edit serverless.yml and change the line
+
+```
+handler: hostAwsServerlessExpress.handler
+```
+
+...to read instead...
+
 
 ```
 handler: hostServerlessHttp.handler
