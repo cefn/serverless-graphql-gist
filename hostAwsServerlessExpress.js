@@ -1,5 +1,5 @@
 const awsServerlessExpress = require("aws-serverless-express")
-const {createServer} = require("./graphqlServer")
+const {createServer} = require("./graphqlExpressServer")
 
 const expressServer = createServer()
 

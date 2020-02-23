@@ -1,5 +1,5 @@
 const serverless = require("serverless-http")
-const {createServer} = require("./graphqlServer")
+const {createServer} = require("./graphqlExpressServer")
 
 const expressServer = createServer()
 

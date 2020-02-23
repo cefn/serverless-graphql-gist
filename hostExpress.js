@@ -1,4 +1,4 @@
-const {createServer} = require("./graphqlServer")
+const {createServer} = require("./graphqlExpressServer")
 
 const expressServer = createServer()
 
