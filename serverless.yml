@@ -9,7 +9,8 @@ provider:
 
 functions:
   graphql:
-    handler: hostAws.handler          
+    handler: hostAwsServerlessExpress.handler          
+    reservedConcurrency: 1 # ensure a singleton manipulating data at one time
     events:
       - http:
           path: /graphql
