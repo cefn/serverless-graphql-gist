@@ -9,7 +9,7 @@ provider:
 
 functions:
   graphql:
-    handler: hostAwsServerlessExpress.handler          
+    handler: hostServerlessHttp.handler          
     events:
       - http:
           path: /graphql
